@@ -1,0 +1,8 @@
+defaults
+
+account mailpit
+host mailpit
+port 1025
+from admin@localhost.local
+
+account default : mailpit
