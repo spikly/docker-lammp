@@ -36,3 +36,10 @@ then
 docker compose pull
 docker compose up -d
 ```
+
+### To update minor PHP patch versions
+
+```
+docker compose stop
+docker compose up -d --build --force-recreate
+```
