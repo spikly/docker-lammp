@@ -4,10 +4,6 @@
 
     DocumentRoot /var/www/html
 
-    # Docker Desktop's port forwarding can leave browsers holding dead
-    # keep-alive connections, causing intermittent multi-second hangs
-    KeepAlive Off
-
     <Directory /var/www/html>
         Options Indexes FollowSymLinks
         AllowOverride All
