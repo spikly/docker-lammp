@@ -8,7 +8,7 @@ services:
 
     container_name: php-apache
 
-    restart: always
+    restart: unless-stopped
 
     ports:
       - "${HTTP_PORT}:80"
@@ -29,7 +29,7 @@ services:
 
     container_name: mariadb
 
-    restart: always
+    restart: unless-stopped
 
     environment:
       MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
@@ -49,7 +49,7 @@ services:
 
     container_name: mailpit
 
-    restart: always
+    restart: unless-stopped
 
     ports:
       - "8025:8025" # Web UI
