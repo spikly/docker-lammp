@@ -10,13 +10,6 @@
         Require all granted
     </Directory>
 
-    # Browsers open connections ahead of a click. mod_reqtimeout drops one
-    # that has sent nothing after 20s, but Docker Desktop's port forwarding
-    # doesn't pass that close on, so the browser later sends the click down a
-    # dead connection and hangs. With no header timeout, Apache waits up to
-    # Timeout (300s), and browsers give up on idle connections well before that.
-    RequestReadTimeout header=0
-
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 
